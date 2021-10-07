@@ -13,10 +13,10 @@ public:
     double e2;
     double x1;
     double x2;
-    friend void Add(FazzyNumbers A, FazzyNumbers B);
-    friend void Sub(FazzyNumbers A, FazzyNumbers B);
-    friend void Mult(FazzyNumbers A, FazzyNumbers B);
-    friend void Divide(FazzyNumbers A, FazzyNumbers B);
+    void Add(FazzyNumbers B);
+    void Sub(FazzyNumbers B);
+    void Mult(FazzyNumbers B);
+    void Divide(FazzyNumbers B);
     void Oppos();
     double getX() { return x; };
     double getE1() { return e1; };
@@ -49,49 +49,51 @@ void FazzyNumbers::Show() {
     
 }
 
-void FazzyNumbers::Oppos() {
+
+FazzyNumbers Oppos(FazzyNumbers) {
     FazzyNumbers rez1;
     rez1.x1 = 1 / (x - e1);
     rez1.x = 1 / x;
     rez1.x2 = 1 / (x - e2);
-    cout << "Opposite number is: " << rez1.x1 << " " << rez1.x << " " << rez1.x2 << endl;
-    
+    //cout << "Opposite number is: " << rez1.x1 << " " << rez1.x << " " << rez1.x2 << endl;
+    return rez1;
 }
 
-void Add(FazzyNumbers A, FazzyNumbers B) {
+FazzyNumbers Add(FazzyNumbers B) {
     FazzyNumbers rez;
-    rez.x1 = A.x + B.x - A.e1 - B.e2;
-    rez.x = A.x + B.x;
-    rez.x2 = A.x + B.x + A.e2 + B.e2;
-    cout << "A + B = " << rez.x1 << " " << rez.x << " " << rez.x2 << endl;
+    rez.x1 = x + B.x - e1 - B.e2;
+    rez.x = x + B.x;
+    rez.x2 = x + B.x + e2 + B.e2;
+    //cout << "A + B = " << rez.x1 << " " << rez.x << " " << rez.x2 << endl;
+    return rez;
     
 }
 
-void Sub(FazzyNumbers A, FazzyNumbers B) {
+FazzyNumbers Sub(FazzyNumbers B) {
     FazzyNumbers rez2;
-    rez2.x1 = A.x - B.x - A.e1 - B.e1;
-    rez2.x = A.x - B.x;
-    rez2.x2 = A.x - B.x + A.e2 + B.e2;
-    cout << "A - B = " << rez2.x1 << " " << rez2.x << " " << rez2.x2 << endl;
-   
+    rez2.x1 = x - B.x - e1 - B.e1;
+    rez2.x = x - x;
+    rez2.x2 = x - B.x + e2 + B.e2;
+    //cout << "A - B = " << rez2.x1 << " " << rez2.x << " " << rez2.x2 << endl;
+    return rez2;
 }
 
-void Mult(FazzyNumbers A, FazzyNumbers B) {
+FazzyNumbers Mult(FazzyNumbers B) {
     FazzyNumbers rez3;
-    rez3.x1 = (A.x * B.x) - (B.x * A.e1) - (A.x * B.e1) + (A.e1 * A.e1);
-    rez3.x = A.x * B.x;
-    rez3.x2 = (A.x * B.x) + (B.x * A.e1) + (A.x * B.e1) + (A.e1 * B.e1);
-    cout << "A * B = " << rez3.x1 << " " << rez3.x << " " << rez3.x2 << endl;
-    
+    rez3.x1 = (x * B.x) - (B.x * e1) - (x * B.e1) + (e1 * e1);
+    rez3.x = x * B.x;
+    rez3.x2 = (x * B.x) + (B.x * e1) + (x * B.e1) + (e1 * B.e1);
+    //cout << "A * B = " << rez3.x1 << " " << rez3.x << " " << rez3.x2 << endl;
+    return rez3;
 }
 
-void Divide(FazzyNumbers A, FazzyNumbers B) {
+FazzyNumbers Divide(FazzyNumbers B) {
     FazzyNumbers rez4;
-    rez4.x1 = (A.x - A.e1) / (B.x + B.e2);
-    rez4.x = A.x / B.x;
-    rez4.x2 = (A.x + A.e2) / (B.x - B.e1);
-    cout << "A / B = " << rez4.x1 << " " << rez4.x << " " << rez4.x2 << endl;
-    
+    rez4.x1 = (x - e1) / (B.x + B.e2);
+    rez4.x = x / B.x;
+    rez4.x2 = (x + e2) / (B.x - B.e1);
+    //cout << "A / B = " << rez4.x1 << " " << rez4.x << " " << rez4.x2 << endl;
+    return rez4;
 }
 
 int main()
