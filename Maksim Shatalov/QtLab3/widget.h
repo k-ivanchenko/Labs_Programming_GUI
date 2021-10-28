@@ -72,8 +72,7 @@ public slots:
     }
     void changeClear()
     {
-        hlbl = lbl;
-        //lbl->setText(" ");
+        lbl->setText(" ");
 
 
     }
