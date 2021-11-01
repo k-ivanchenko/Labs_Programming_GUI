@@ -15,15 +15,15 @@ Widget::Widget(QWidget *parent)
     lblSlider = new QLabel("1  ", this);
     lcd = new QLCDNumber(0, this);
 
-    list1->addItem("1. from list1");
-    list1->addItem("2. from list1");
-    list1->addItem("3. from list1");
-    list1->addItem("4. from list1");
+    list1->addItem("1.1");
+    list1->addItem("2.1");
+    list1->addItem("3.1");
+    list1->addItem("4.1");
 
-    list2->addItem("1. from list2");
-    list2->addItem("2. from list2");
-    list2->addItem("3. from list2");
-    list2->addItem("4. from list2");
+    list2->addItem("1.2");
+    list2->addItem("2.2");
+    list2->addItem("3.2");
+    list2->addItem("4.2");
 
     lcd->move(100, 10);
     lcd->resize(200, 25);
@@ -54,7 +54,7 @@ void Widget::slotBtn(){
     }
     else{
         btn->setText("Start");
-        lbl->setText("");
+        lbl->setText("Расчет окончен");
         killTimer(timer);
     }
 
@@ -68,17 +68,52 @@ void Widget::timerEvent(QTimerEvent*){
     int temp = rand() % 4;
     switch(temp){
     case 0:
-        list1->addItem(list2->item(0));// не добавляет элемент из list2 в list1
-        delete list2->item(0);
+        if(list2->item(0)){
+            list1->addItem(list2->item(0)->text());
+            lcd->display(list2->item(0)->text().toDouble()); // не работает
+            delete list2->item(0);
+        }
+        else{
+            btn->setText("Start");
+            lbl->setText("Расчет окончен");
+            killTimer(timer);
+        }
         break;
     case 1:
-
+        if(list1->item(0)){
+            list2->addItem(list1->item(0)->text());
+            lcd->display(list1->item(0)->text().toDouble());
+            delete list1->item(0);
+        }
+        else{
+            btn->setText("Start");
+            lbl->setText("Расчет окончен");
+            killTimer(timer);
+        }
         break;
     case 2:
-
+        if(list2->item(0)){
+            list1->addItem(list2->item(0)->text());
+            lcd->display(list2->item(0)->text().toDouble());
+            delete list2->item(0);
+        }
+        else{
+            btn->setText("Start");
+            lbl->setText("Расчет окончен");
+            killTimer(timer);
+        }
         break;
     case 3:
-
+        if(list1->item(0)){
+            list2->addItem(list1->item(0)->text());
+            lcd->display(list1->item(0)->text().toDouble());
+            delete list1->item(0);
+        }
+        else{
+            btn->setText("Start");
+            lbl->setText("Расчет окончен");
+            killTimer(timer);
+        }
         break;
     }
 }
