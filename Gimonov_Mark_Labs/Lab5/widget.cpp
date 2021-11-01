@@ -13,7 +13,8 @@ Widget::Widget(QWidget *parent)
     list2 = new QListWidget(this);
     lbl = new QLabel("  ", this);
     lblSlider = new QLabel("1  ", this);
-    lcd = new QLCDNumber(0, this);
+    lcd = new QLCDNumber(10, this);
+    lcd->setSegmentStyle(QLCDNumber::Flat);
 
     list1->addItem("1.1");
     list1->addItem("2.1");
@@ -26,7 +27,7 @@ Widget::Widget(QWidget *parent)
     list2->addItem("4.2");
 
     lcd->move(100, 10);
-    lcd->resize(200, 25);
+    lcd->resize(100, 25);
     slider->move(50, 40);
     lblSlider->move(25, 40);
     btn->move(250, 40);
@@ -57,7 +58,6 @@ void Widget::slotBtn(){
         lbl->setText("Расчет окончен");
         killTimer(timer);
     }
-
 }
 
 void Widget::slotSlider(int val ){
@@ -70,7 +70,7 @@ void Widget::timerEvent(QTimerEvent*){
     case 0:
         if(list2->item(0)){
             list1->addItem(list2->item(0)->text());
-            lcd->display(list2->item(0)->text().toDouble()); // не работает
+            lcd->display(list2->item(0)->text().toDouble());
             delete list2->item(0);
         }
         else{
