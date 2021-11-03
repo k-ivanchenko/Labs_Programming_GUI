@@ -79,11 +79,11 @@ void Window::timerEvent(QTimerEvent *event)
 
 
     QListWidgetItem *text2 = list2 ->takeItem(r);
-     text2 ->setText(text2->text()+"*");
+     text2 ->setText(text2->text());
     list1->insertItem(r,text2);
     list2->insertItem(r,text1);
 
-    lcd1 ->display(r);
+    lcd1 ->display(r+1);
 
     event->timerId();
     *chek = event->timerId();
