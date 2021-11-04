@@ -25,11 +25,10 @@ public:
 
     int countMouseL, countMouseR;
 
-    void locationWin(QMoveEvent *e);
-    void sizeWin(QResizeEvent *e);
-    void locationMou(QMouseEvent *e);
-    void pressMou(QMouseEvent *e);
-    void pressKey(QKeyEvent *e);
+    void moveEvent(QMoveEvent *e);
+    void resizeEvent(QResizeEvent *e);
+    void mousePressEvent(QMouseEvent *e);
+    void keyPressEvent(QKeyEvent *e);
 
 public:
     lab6(QWidget *parent = nullptr);
