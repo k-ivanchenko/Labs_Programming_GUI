@@ -61,66 +61,7 @@ void Widget::SetTextBegin()
     radio3->setEnabled(true);
 
 
- /*   if (flag1->isChecked()&&flag2->isChecked()&&flag3->isChecked()){
-        str="flag1-checked flag2-checked flag3 -checked";
-        lbl->setText(str);
-    }
-
-    if(flag1->isChecked())
-    {
-        str="flag1-checked";
-        lbl->setText(str);
-    }
-
-  else if(flag1->isChecked() && flag2->isChecked()) {
-
-       str="flag1-checked || flag2-checked || flag3 -unchecked"
-           "radio1-on ";
-       lbl->setText(str);
-
-  }
-   else if(flag2->isChecked() && flag3->isChecked()) {
-        str="flag1-unchecked || flag2-checked || flag3 -checked";
-        lbl->setText(str);
-
-   }
-    else if(flag1->isChecked() && flag3->isChecked()) {
-        str="flag1-checked || flag2-unchecked || flag3 -checked";
-        lbl->setText(str);
-
-   }
-    else if(flag1->isChecked()) {
-        str="flag1-checked || flag2-unchecked || flag3 -unchecked";
-        lbl->setText(str);
-
-   }
-    else if(flag2->isChecked()) {
-        str="flag1-unchecked || flag2-checked || flag3 -unchecked";
-        lbl->setText(str);
-
-   }
-    else if(flag3->isChecked() ) {
-        str="flag1-unchecked || flag2-unchecked || flag3-checked";
-        lbl->setText(str);
-
-   }
-     if(radio1->isChecked()&& flag1->isChecked()){
-        str="radio1-on flag1-check";
-        lbl->setText(str);
-    }
-     if(radio2->isChecked()&& flag2->isChecked()){
-        str="radio2-on flag2-check";
-        lbl->setText(str);
-    }
-     if(radio3->isChecked()&&flag3->isChecked()){
-        str="radio3-on flag3-check";
-        lbl->setText(str);
-    }
-      else if(radio3->isChecked()&&flag3->isChecked() &&flag2->isChecked() &&flag1->isChecked()){
-        str="radio3-on flag3-check flag2-check flag1-check";
-        lbl->setText(str);
-    }
-*/
+ 
 }
 
 void Widget::SetTextDis()
@@ -141,7 +82,7 @@ void Widget::SetTextDis()
 }
 void Widget::Check1()
 {
-    if(flag1->isTristate()) lbl->setText("flag1-checked");
+    if(flag1->isChecked()) lbl->setText("flag1-checked");
     else lbl->setText("flag1 unchecked");
     if(flag1->isChecked()&&flag2->isChecked())
         lbl->setText("flag1-checked flag2-checked");
@@ -154,20 +95,14 @@ void Widget::Check1()
         lbl->setText("flag1-checked flag2-checked flag3-checked");
     else lbl->setText("flag1 unchecked flag2 unchecked flag3 unchecked");
 
-    //flag2->setCheckState(Qt::Unchecked);
-    //flag3->setCheckState(Qt::Unchecked);
-
-
-    //flag1->setCheckState(Qt::Checked);
+    
 
 }
 void Widget::Check2()
 {
     if(flag2->isChecked()) lbl->setText("flag2-checked");
     else lbl->setText("flag2 unchecked");
-  // flag1->setCheckState(Qt::Unchecked);
-    //flag3->setCheckState(Qt::Unchecked);
-//    flag2->setCheckState(Qt::Checked);
+  
     if(flag2->isChecked()&&flag3->isChecked())
         lbl->setText("flag2-checked flag3-checked");
     else lbl->setText("flag2-unchecked flag3-unchecked");
@@ -186,9 +121,7 @@ void Widget::Check3()
     if(flag1->isChecked()&&flag2->isChecked()&&flag3->isChecked())
         lbl->setText("flag1-checked flag2-checked flag3-checked");
     else lbl->setText("flag1 unchecked flag2 unchecked flag3 unchecked");
-  //  flag1->setCheckState(Qt::Unchecked);
-  //  flag2->setCheckState(Qt::Unchecked);
-    //flag3->setCheckState(Qt::Checked);
+  
 }
 
 void Widget::Radio1(){
