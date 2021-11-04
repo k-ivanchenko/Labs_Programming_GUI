@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1635704502 source:d:\Приложения\laba1_2kurs\main.cpp
+	<iostream>
+	<cmath>
+	"header.h"
+
+1635696167 source:d:\Приложения\laba1_2kurs\triangle.cpp
+	<iostream>
+	<cmath>
+
+1634796775 d:\Приложения\laba1_2kurs\triangle.cpp
+	<iostream>
+	<cmath>
+
+1635704762 d:\Приложения\laba1_2kurs\header.h
+	<cmath>
+	<math.h>
+

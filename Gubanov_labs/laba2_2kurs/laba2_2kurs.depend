@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1635396989 source:d:\Приложения\laba2_2kurs\main.cpp
+	<iostream>
+	"vector.h"
+
+1635705403 d:\Приложения\laba2_2kurs\vector.h
+	<iostream>
+
