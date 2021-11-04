@@ -8,7 +8,7 @@ Widget::Widget(QWidget *parent)
 
 button1=new QPushButton("Обновить",this);
 
-button2=new QPushButton("Закрыть",this);
+button2=new QPushButton("Off",this);
 lbl = new QLabel("all flags unchecked" , this);
 flag1 = new QCheckBox("checkbox1" , this);
 flag2 = new QCheckBox("checkbox2" , this);
