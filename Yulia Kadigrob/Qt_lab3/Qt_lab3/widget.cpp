@@ -108,22 +108,25 @@ void Widget::flg3()
 void Widget::psh1()
 {
     labe -> setText("Yes");
-    rdn1 -> setEnabled(true);
-    rdn2 -> setEnabled(true);
-    rdn3 -> setEnabled(true);
-    flag1 -> setEnabled(true);
-    flag2 -> setEnabled(true);
-    flag3 -> setEnabled(true);
+    connect (rdn1, SIGNAL(clicked()), this, SLOT(rad1()));
+    connect (rdn2, SIGNAL(clicked()), this, SLOT(rad2()));
+    connect (rdn3, SIGNAL(clicked()), this, SLOT(rad3()));
+    connect (flag1, SIGNAL(clicked()), this, SLOT(flg1()));
+    connect (flag2, SIGNAL(clicked()), this, SLOT(flg2()));
+    connect (flag3, SIGNAL(clicked()), this, SLOT(flg3()));
+    connect (butt1, SIGNAL(clicked()), this, SLOT(psh1()));
+    connect (butt2, SIGNAL(clicked()), this, SLOT(psh2()));
 }
 void Widget::psh2()
 {
     labe -> setText("No");
-    rdn1 -> setEnabled(false);
-    rdn2 -> setEnabled(false);
-    rdn3 -> setEnabled(false);
-    flag1 -> setEnabled(false);
-    flag2 -> setEnabled(false);
-    flag3 -> setEnabled(false);
+    disconnect (rdn1, SIGNAL(clicked()), this, SLOT(rad1()));
+    disconnect (rdn2, SIGNAL(clicked()), this, SLOT(rad2()));
+    disconnect (rdn3, SIGNAL(clicked()), this, SLOT(rad3()));
+    disconnect (flag1, SIGNAL(clicked()), this, SLOT(flg1()));
+    disconnect (flag2, SIGNAL(clicked()), this, SLOT(flg2()));
+    disconnect (flag3, SIGNAL(clicked()), this, SLOT(flg3()));
+    disconnect (butt2, SIGNAL(clicked()), this, SLOT(psh2()));
 }
 
 
