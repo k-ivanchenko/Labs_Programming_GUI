@@ -35,5 +35,16 @@ public:
 private:
     Ui::Widget *ui;
 };
+class MyValidator:QIntValidator{
+public:
+    MyValidator(QObject *parent=0):QIntValidator(parent){}
+    State validate (QString&str, int&pos) const
+    {pos=0;
+    if(int k % 2 == 0:)return Invalid;
+    return Acceptable;
+    }
+
+};
+
 #endif // WIDGET_H
 

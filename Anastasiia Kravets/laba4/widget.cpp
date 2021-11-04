@@ -30,14 +30,14 @@ connect(spin, SIGNAL(valueChanged(int)), this, SLOT(setMax(int)));
 
 void Widget::Spin(const QString &text) {
     int a = text.toInt();
-        spin->setValue(a);
+    spin->setValue(a);
 
 }
 
 void Widget::setMaxim(int k) {
 
     spin->setMaximum(k);
-
+LineEdit->setValidator(validator);
 
 
 }
