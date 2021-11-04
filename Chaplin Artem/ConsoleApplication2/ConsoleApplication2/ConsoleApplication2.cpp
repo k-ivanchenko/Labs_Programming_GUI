@@ -8,22 +8,30 @@ using namespace std;
 
 class Number {
 public:
-	virtual float toFloat() = 0;
+	virtual void toFloat() = 0;
 };
 
 class Rational : public Number {
-public:
+private:
 float Rational;
-	float toFloat() override {
-		return Rational;
+public:
+	void SetRational(float temp) {
+		Rational = temp;
+	}
+	void toFloat() override {
+		cout << "Рациональное число: " << Rational << " является действительным числом!" << endl;
 	}
 };
 
 class Decimal : public Number {
-public:
+private:
 float Decimal;
-	float toFloat() override {
-		return Decimal;
+public:
+	void SetDecimal(float temp) {
+		Decimal = temp;
+	}
+	void toFloat() override {
+		cout << "Десятичная дробь: " << Decimal <<  " является действительным числом!" << endl;
 	}
 };
 
@@ -34,13 +42,20 @@ int main()
 	Rational rational;
 	Decimal decimal;
 
+	float tempR;
+	float tempD;
+
 	cout << "Введите Рациональное число: " << endl;
-	cin >> rational.Rational;
+	cin >> tempR;
+	rational.SetRational(tempR);
 
 	cout << "Введите Десятичную дробь" << endl;
-	cin >> decimal.Decimal;
+	cin >> tempD;
+	decimal.SetDecimal(tempD);
 
-	cout << "Десятичная дробь: " << decimal.toFloat() << " и " << "рациональное число: " << rational.toFloat() << " являются действительными числами!" << endl;
+
+	rational.toFloat();
+	decimal.toFloat();
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
