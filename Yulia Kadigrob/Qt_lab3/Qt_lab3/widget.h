@@ -35,7 +35,6 @@ public slots:
     void flg1();
     void flg2();
     void flg3();
-    void text();
     void psh1();
     void psh2();
 
