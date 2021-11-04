@@ -4,11 +4,12 @@
 #include "QRandomGenerator"
 
 int glob = 0;
+int tik = 1;
 
 Window::Window(QWidget *parent)
     : QMainWindow(parent)
 {
-    resize(300, 250);
+    resize(300, 450);
     text1 = new QLabel("Осторожно-расчет!",this);
 
     list1 = new QListWidget(this);
@@ -25,22 +26,24 @@ Window::Window(QWidget *parent)
 
     text1 -> move(70,10);
     list1 -> move(10, 50);
+    list1 -> resize(50,130);
     for(int i = 1; i <= 5; i++)
     {
         QString b = QString::number(i);
         list1 -> addItem(b);
     }
     list2 -> move(130, 50);
+    list2 -> resize(50,130);
     for(int i = 1; i <= 5; i++)
     {
         QString b = QString::number(i);
         list2 -> addItem(b);
     }
-    butt1 -> move(10, 90);
+    butt1 -> move(10, 180);
 
-    lcd1 -> move(10, 130);
+    lcd1 -> move(10, 250);
 
-    slide1 -> move(10, 170);
+    slide1 -> move(10, 295);
 
 
 
@@ -72,20 +75,21 @@ void Window :: press()
 void Window::timerEvent(QTimerEvent *event)
 {
     int r = qrand()%5;
+
+    if(tik %2 == 0)
+    {
+        QListWidgetItem *text2 = list2 ->takeItem(r);
+        list1 ->insertItem(6,text2);
+        lcd1 ->display(r+1);
+        tik++;
+
+    }else{
     QListWidgetItem *text1 = list1 ->takeItem(r);
-    text1 ->setText(text1->text());
+    list2 ->insertItem(6,text1);
+    lcd1 ->display(r+1);
+    tik++;
+    }
 
-    list2->insertItem(6,text1);
-
-
-    QListWidgetItem *text2 = list2 ->takeItem(r);
-     text2 ->setText(text2->text()+"*");
-    list1->insertItem(r,text2);
-    list2->insertItem(r,text1);
-
-    lcd1 ->display(r);
-
-    event->timerId();
     *chek = event->timerId();
 }
 
