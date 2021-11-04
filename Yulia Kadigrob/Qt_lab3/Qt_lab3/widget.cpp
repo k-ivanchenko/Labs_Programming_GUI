@@ -105,14 +105,6 @@ void Widget::flg3()
     }
         else rdn3 -> setEnabled(true);
 }
-
-void Widget::text()
-{
-    if(flag3 -> isChecked())
-    {}
-    else
-        rdn1 -> setEnabled(true);
-}
 void Widget::psh1()
 {
     labe -> setText("Yes");
