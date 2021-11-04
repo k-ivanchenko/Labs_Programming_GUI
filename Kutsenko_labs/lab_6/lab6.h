@@ -28,6 +28,7 @@ public:
     void moveEvent(QMoveEvent *e);
     void resizeEvent(QResizeEvent *e);
     void mousePressEvent(QMouseEvent *e);
+    void mouseMoveEvent(QMouseEvent *e);
     void keyPressEvent(QKeyEvent *e);
 
 public:

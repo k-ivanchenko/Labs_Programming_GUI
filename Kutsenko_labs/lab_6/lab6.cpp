@@ -62,10 +62,6 @@ void lab6::resizeEvent(QResizeEvent *e){
 }
 
 void lab6::mousePressEvent(QMouseEvent *e){
-    spb_xMouWin->setValue(e->position().x());
-    spb_yMouWin->setValue(e->position().y());
-    spb_xMouse->setValue(e->globalPosition().x());
-    spb_yMouse->setValue(e->globalPosition().y());
     if(Qt::LeftButton&e->button()){
         countMouseL++;
     }
@@ -74,6 +70,14 @@ void lab6::mousePressEvent(QMouseEvent *e){
     }
     lcd_left->display(countMouseL);
     lcd_right->display(countMouseR);
+}
+
+void lab6::mouseMoveEvent(QMouseEvent *e){
+    spb_xMouWin->setValue(e->position().x());
+    spb_yMouWin->setValue(e->position().y());
+    spb_xMouse->setValue(e->globalPosition().x());
+    spb_yMouse->setValue(e->globalPosition().y());
+
 }
 
 
