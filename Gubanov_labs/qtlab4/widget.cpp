@@ -63,17 +63,7 @@ void Widget ::setBt(int ){
     spin->setValue(b);
 
 }
-/*void Widget::setTop(int a)
-{
-    spin->setMinimum(a);
-}
-void Widget ::setTet(int)
-{
-    QString a =edit->text();
-    int b =a.toInt();
-    spin->setValue(b);
-}
-*/
+
 Widget::~Widget()
 {
 }
