@@ -33,11 +33,11 @@ void Widget::slotEdit2(QString val){
 void Widget::mouseMoveEvent(QMouseEvent *e){
     bool leftClick = e->buttons() & Qt::LeftButton;
 
-    if(leftClick && (e->x() >= edit1->x() && e->x() <= edit1->x()+120) && (e->y() >= edit1->y() && e->y() <= edit1->x()+45)){
+    if(leftClick && (e->x() >= edit1->x() && e->x() <= edit1->x()+120) && (e->y() >= edit1->y() && e->y() <= edit1->y()+45)){
         edit1->move(e->x()-100, e->y()-25);
     }
 
-    else if(leftClick && (e->x() >= edit2->x() && e->x() <= edit2->x()+120) && (e->y() >= edit2->y() && e->y() <= edit2->x()+45)){ //не работает
+    else if(leftClick && (e->x() >= edit2->x() && e->x() <= edit2->x()+120) && (e->y() >= edit2->y() && e->y() <= edit2->y()+45)){
         edit2->move(e->x()-100, e->y()-25);
     }
 }
