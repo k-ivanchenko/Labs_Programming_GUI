@@ -7,11 +7,11 @@ Widget::Widget(QWidget *parent)
     timer = new QTimer(this);
     counter->setMinimum(1);
     counter->setMaximum(10000);
-    counter->setValue(1000);
+    counter->setValue(100);
 
-    counter->move(100, 50);
+    counter->move(100, 25);
 
-    timer->start(1000);
+    timer->start(100);
 
     connect(counter, SIGNAL(valueChanged(int)), this, SLOT(slotCounter(int)));
     connect(timer, SIGNAL(timeout()), this, SLOT(moveSquare()));
