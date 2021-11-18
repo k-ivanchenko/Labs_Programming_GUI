@@ -7,13 +7,21 @@ Widget::Widget(QWidget *parent)
         grid = new QGridLayout (this);
 
         edit1 = new QLineEdit("0",this);
+        edit1->setReadOnly(true);
         edit2 = new QLineEdit("0",this);
+        edit2->setReadOnly(true);
         edit3 = new QLineEdit("0",this);
+        edit3->setReadOnly(true);
         edit4 = new QLineEdit("0",this);
+        edit4->setReadOnly(true);
         edit5 = new QLineEdit("0",this);
+        edit5->setReadOnly(true);
         edit6 = new QLineEdit("0",this);
+        edit6->setReadOnly(true);
         edit7 = new QLineEdit("0",this);
+        edit7->setReadOnly(true);
         edit8 = new QLineEdit("0",this);
+        edit8->setReadOnly(true);
 
 
         lbl1 = new QLabel("0" , this);

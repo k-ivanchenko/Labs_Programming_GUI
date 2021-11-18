@@ -25,7 +25,8 @@ MainWindow::MainWindow(QWidget *parent)
     btn = new QPushButton("My Button",this);
     btn->move(150, 200);
 
-    connect(cbox, SIGNAL(currentIndexChanged(int)), this, SLOT(CboxChange()));
+    connect(cbox, SIGNAL(currentIndexChanged(int)), this, SLOT(CboxChange())); 
+    connect(cbox, SIGNAL(currentIndexChanged(int)), this, SLOT(clearEditText()));
     connect(btn, SIGNAL(clicked()), this, SLOT(LWChange()));
     connect(sld, SIGNAL(valueChanged(int)),this, SLOT(SLDChange(int)));
 }
@@ -36,14 +37,16 @@ MainWindow::~MainWindow()
 
 void MainWindow::CboxChange()
 {
+
     int n = cbox->count();
     lcd->display(n);
+    cbox->setCurrentIndex(-1);
 }
+
 
 void MainWindow::LWChange()
 {
     QString str1;
-    lw->clear();
     for(int i = 0; i < cbox->count(); i++)
     {
         str1 = cbox->itemText(i);
