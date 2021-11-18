@@ -20,7 +20,7 @@ lab8::lab8(QWidget *parent)
 void lab8::paintEvent(QPaintEvent *e){
     painter->begin(this);
     QPolygon polygon;
-    polygon << QPoint(x, y+20) << QPoint(x+20, 0) << QPoint(x+20,y+40);
+    polygon << QPoint(x, y+20) << QPoint(x+20, y) << QPoint(x+20,y+40);
     painter->drawPolygon(polygon);
     painter->end();
 }
@@ -33,16 +33,19 @@ void lab8::moveIt(){
         repaint();
     }
     else if(counter==1){
+        counter=2;
         x=0;
         y=300;
         repaint();
     }
     else if(counter==2){
+        counter=3;
         x=300;
         y=300;
         repaint();
     }
     else if(counter==3){
+        counter=0;
         x=300;
         y=0;
         repaint();
