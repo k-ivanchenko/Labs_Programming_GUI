@@ -15,7 +15,7 @@ private:
 
     QSpinBox *counter;
     QTimer *timer;
-    int x1 = 100, y1 = 100, x2 = 200, y2 = 200;
+    int x1, y1, x2, y2;
 private slots:
     void slotCounter(int);
     void moveSquare();

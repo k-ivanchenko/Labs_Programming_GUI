@@ -5,6 +5,7 @@ Widget::Widget(QWidget *parent)
 {
     counter = new QSpinBox(this);
     timer = new QTimer(this);
+    x1 = 100, y1 = 100, x2 = 200, y2 = 200;
     counter->setMinimum(1);
     counter->setMaximum(10000);
     counter->setValue(100);
