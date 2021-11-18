@@ -14,6 +14,7 @@
     slider = new QSlider(Qt::Vertical, this);
     label = new QLabel("HELP",this);
     button = new QPushButton("PRESS", this);
+    QString str1=("");
 
     list->move(10, 100);
     label->move(10, 30);
@@ -32,7 +33,7 @@
 
 }
     void Widget::LCDAD(int r) {
-
+    list->clear();
        for(int i=0;i<r;i++){
         int random_value = rand() % 100;
     list->addItem(QString::number(random_value));
@@ -49,10 +50,20 @@
 
 
     void Widget::SHOW() {
-        for(int i=0; i<list->count();i++){
-        this->label->setText(list->item(i)->text());
 
-            }
+        for(int i=0; i<list->count();i++){
+
+       str1=list->item(i)->text();
+       QString str=str1+item(i)->text();
+       this->label->setText(str);
+         }
+
+
+
+
+
+
+
 };
 
 

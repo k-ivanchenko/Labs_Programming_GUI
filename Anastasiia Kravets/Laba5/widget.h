@@ -25,7 +25,7 @@ public:
     QSlider *slider;
     QLabel *label;
     QPushButton *button;
-
+    QString str1;
 
 public slots:
 void LCDAD(int r);
