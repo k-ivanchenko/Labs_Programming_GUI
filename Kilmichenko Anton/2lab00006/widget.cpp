@@ -87,7 +87,7 @@ void Widget::moveEvent(QMoveEvent *e)
          lbl1->setText("0");
          l = 0;
      }
-     else if(Qt::Key_R == e->key())
+     else if("r" == e->text())
      {
          lbl2->setText("0");
          r = 0;
