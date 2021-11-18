@@ -28,7 +28,7 @@ public:
 
 
 public slots:
-void LCDAD();
+void LCDAD(int r);
 void LC(int i);
 void SHOW();
 
