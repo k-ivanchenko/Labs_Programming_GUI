@@ -87,27 +87,7 @@ void Widget::moveTriangle()
         repaint();
         timer->stop();
     }
-   /* for(int i = 0; i <6 ; i++){
-           y-=i;
-           repaint();
-        }
-        QThread::msleep(100);
-
-        for(int i = 0; i < 8; i++){
-           x+=i;
-           repaint();
-        }
-        QThread::msleep(100);
-        for(int i = 0; i < 8; i++){
-           y+=i;
-           repaint();
-        }
-     QThread::msleep(100);
-        for(int i = 0; i < 6; i++){
-           x-=i;
-           repaint();
-        }
-        QThread::msleep(100);*/
+   
 
 }
 
